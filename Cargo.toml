@@ -1,0 +1,35 @@
+[package]
+name = "site"
+version = "0.1.0"
+edition.workspace = true
+authors.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log = { version = "0.4.17", features = [
+                            "std",
+                            "serde",
+                            "kv_unstable",
+                            "kv_unstable_serde",
+] }
+console_log = { version = "0.2.0", features = ["color"] }
+gloo-utils = "0.1.6"
+js-sys = "0.3.60"
+stylist = { version = "0.11.0", features = [
+                            "yew",
+                            "yew_integration",
+                            "parser",
+] }
+wasm-bindgen = { version = "0.2.83", features = [
+                            "serde",
+                            "serde_json",
+                            "serde-serialize",
+] }
+wasm-bindgen-futures = { version = "0.4.33", features = ["futures-core"] }
+yew = { version = "0.20.0", features = ["ssr", "hydration"] }
+yew-router = "0.17.0"
+
+
+[lib]
+crate-type = ["cdylib"]
