@@ -1,0 +1,4 @@
+target
+static/*.js
+static/*.json
+static/*.wasm

@@ -1,0 +1,31 @@
+[package]
+name = "OxiDeskServer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# TODO: Probably change to tracer
+log = { version = "0.4.17", features = [
+                            "std",
+                            "serde",
+                            "kv_unstable",
+                            "kv_unstable_serde",
+] }
+actix-web = { version = "4.2.1", features = [
+                            "secure-cookies",
+                            "rustls",
+                            "experimental-io-uring",
+] }
+log4rs = { version = "1.2.0", features = ["json_format"] }
+sea-orm = { version = "0.10.4", features = [
+                            "mock",
+                            "debug-print",
+                            "runtime-actix-rustls",
+                            "sea-query-binder",
+                            "sqlx-postgres",
+] }
+
+[[bin]]
+name = "server"
